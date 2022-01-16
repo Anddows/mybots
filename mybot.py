@@ -730,7 +730,7 @@ def send_message(message):
      bot.send_message(message.chat.id, 'error, try again')
 
  elif message.text.lower() == "commands":
-     bot.send_message(message.chat.id, '<b><em>Danger Wolf Commands</em></b>\n\n<a href="https://t.me/code_idea/230">1.9.1</a>\n<a href="https://t.me/code_idea/285">1.9.2</a>\n<a href="https://t.me/code_idea/300">1.10 beta</a>\n<a href="https://t.me/code_idea/349">1.11 beta</a>', parse_mode = 'HTML')
+     bot.send_message(message.chat.id, '<b><em>Danger Wolf Commands</em></b>\n\n<a href="https://anddows.github.io/dwnews.html">1.11 beta</a>', parse_mode = 'HTML')
 
 #  elif message.text.lower() == "weather":
 #      bot.send_messsage(message.chat.id, "Weather:\n\n")
