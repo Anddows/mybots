@@ -1007,7 +1007,7 @@ def send_message(message):
 def rec2(message):
  try: 
     rec = message.text
-def speak_text(says):
+def speak_text(rec):
   tts = gTTS(text = says, lang = "ru")
   filename = "text.mp3"
   tts.save(filename)
