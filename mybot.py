@@ -1007,12 +1007,13 @@ def send_message(message):
 def rec2(message):
  try: 
     rec = message.text
-def speak_text(rec):
-  tts = gTTS(text = says, lang = "ru")
-  filename = "text.mp3"
-  tts.save(filename)
+	with open('voice.mp3', 'rb') as f:
+			audio = f.read()
+		bot.send_audio(audio = audio, chat_id=message.chat.id)
 
-speak_text(rec)
+        tts = gTTS(text = message.text, lang = "ru")
+        filename = "voice1.mp3"
+        tts.save(filename)
  except:
       bot.send_message(message.chat.id, "{bot[text]#}")
 
