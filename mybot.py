@@ -1012,7 +1012,7 @@ def rec2(message):
     bot.send_audio(audio = audio, chat_id=message.chat.id)
 
     tts = gTTS(text = message.text, lang = "ru")
-    filename = "text.mp3"
+    filename = "text1.mp3"
     tts.save(filename)
  except:
       bot.send_message(message.chat.id, "{bot[text]#}")
