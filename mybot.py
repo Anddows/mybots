@@ -1011,7 +1011,7 @@ def rec2(message):
         audio = f.read()
     bot.send_audio(audio = audio, chat_id=message.chat.id)
 
-    tts = gTTS(text = message.text, lang = "ru")
+    tts = gTTS(text = rec, lang = "ru")
     filename = "text1.mp3"
     tts.save(filename)
  except:
