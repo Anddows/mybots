@@ -1013,6 +1013,8 @@ def rec2(message):
     
    with open('text1.mp3', 'rb') as f:
        audio = f.read()
+   bot.send_chat_action(message.chat.id, 'record_audio')
+   time.sleep(1)
    bot.send_audio(audio = audio, chat_id=message.chat.id)
 
 #     tts = gTTS(text = rec, lang = "ru")
