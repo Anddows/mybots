@@ -1011,7 +1011,6 @@ def speak_text(says):
   tts = gTTS(text = says, lang = "ru")
   filename = "text.mp3"
   tts.save(filename)
-#   playsound.playsound(filename)
 
 speak_text(rec)
  except:
