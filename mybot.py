@@ -1006,14 +1006,18 @@ def send_message(message):
     
 def rec2(message):
  try: 
-    rec = message.text
-    with open('text.mp3', 'rb') as f:
-        audio = f.read()
-    bot.send_audio(audio = audio, chat_id=message.chat.id)
+   if message.text:
+       tts = gTTS(text = message.text, lang = "ru")
+       filename = "text1.mp3"
+       tts.save(filename)
+    
+   with open('text1.mp3', 'rb') as f:
+       audio = f.read()
+   bot.send_audio(audio = audio, chat_id=message.chat.id)
 
-    tts = gTTS(text = rec, lang = "ru")
-    filename = "text1.mp3"
-    tts.save(filename)
+#     tts = gTTS(text = rec, lang = "ru")
+#     filename = "text1.mp3"
+#     tts.save(filename)
  except:
       bot.send_message(message.chat.id, "{bot[text]#}")
 
