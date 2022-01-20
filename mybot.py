@@ -1,6 +1,8 @@
 import telebot
 import time
 import adminsid
+import speech_recognition as sr
+from gtts import gTTS
 from pyfiglet import Figlet
 import qrcode
 import json
@@ -1009,7 +1011,7 @@ def speak_text(says):
   tts = gTTS(text = says, lang = "ru")
   filename = "text.mp3"
   tts.save(filename)
-  playsound.playsound(filename)
+#   playsound.playsound(filename)
 
 speak_text(rec)
  except:
