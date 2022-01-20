@@ -997,6 +997,23 @@ def send_message(message):
  elif message.text.lower() == '?id':
         link = bot.send_message(message.chat.id, "link: ")
         bot.register_next_step_handler(link, linkmsg)
+        
+ elif message.text.lower() == ".a":
+    rec = bot.send_message(message.chat.id, "send me text")
+    bot.register_next_step_handler(rec, rec2)
+    
+def rec2(message):
+ try: 
+    rec = message.text
+def speak_text(says):
+  tts = gTTS(text = says, lang = "ru")
+  filename = "text.mp3"
+  tts.save(filename)
+  playsound.playsound(filename)
+
+speak_text(rec)
+ except:
+      bot.send_message(message.chat.id, "{bot[text]#}")
 
 def linkmsg(message):
  try:
