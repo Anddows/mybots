@@ -1009,14 +1009,10 @@ def send_message(message):
     bot.register_next_step_handler(list1, music)
     
 def music(message):
- try:
     message = message.text
     with open("musics.py", 'a') as f:
         f.write(f'{message} = {message}\n\n')
     bot.send_message(message.chat.id, "Done! Saved")
-    
- except:
-      bot.send_message(message.chat.id, "Error")
     
 def rec2(message):
  try: 
