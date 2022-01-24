@@ -1,5 +1,6 @@
 import telebot
 import time
+import musics
 import adminsid
 import speech_recognition as sr
 from gtts import gTTS
@@ -1004,14 +1005,35 @@ def send_message(message):
     rec = bot.send_message(message.chat.id, "send me text")
     bot.register_next_step_handler(rec, rec2)
     
+ elif message.text.lower() == "bot.musics.input":
+    list2 = bot.send_message(message.chat.id, "input your music name for search")
+    bot.register_next_step_handler(list2, music2)
+    
+ 
  elif message.text.lower() == "bot.musics.list":
     list1 = bot.send_message(message.chat.id, "input your music link")
     bot.register_next_step_handler(list1, music)
     
+ elif message.text.lower() == "bot = my.musics.list":
+    name1 = bot.send_message(message.chat.id, "input your music name")
+    bot.register_next_step_handler(name1, musicname)
+    
+
+def musicname(message):
+    text = message.text
+    bot.send_message(message.chat.id, f"{musics.text}")
+    
+    
 def music(message):
     text = message.text
     with open("musics.py", 'a') as f:
-        f.write(f'{text} = {text}\n\n')
+        f.write(f'{text}\n\n')
+    bot.send_message(message.chat.id, "Done! Saved")
+    
+def musics2(message):
+    text = message.text
+    with open("musics.py", 'a') as f:
+        f.write(f'{text} = ')
     bot.send_message(message.chat.id, "Done! Saved")
     
 def rec2(message):
