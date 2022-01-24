@@ -1026,13 +1026,13 @@ def musicname(message):
     
 def music(message):
     text = message.text
-    with open("mybots/musics.py", 'a') as f:
+    with open(https://github.com/Anddows/mybots/edit/main/musics.py, 'a') as f:
         f.write(f'{text}\n\n')
     bot.send_message(message.chat.id, "Done! Saved")
     
 def music2(message):
     text = message.text
-    with open("mybots/musics.py", 'a') as f:
+    with open(https://github.com/Anddows/mybots/edit/main/musics.py, 'a') as f:
         f.write(f'{text} = ')
     bot.send_message(message.chat.id, "Done! Saved")
     
