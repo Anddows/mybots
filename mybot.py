@@ -1005,8 +1005,8 @@ def send_message(message):
     bot.register_next_step_handler(rec, rec2)
     
  elif message.text.lower() == "bot.musics.list":
-    list = bot.send_message(message.chat.id, "input your music link")
-    bot.register_next_step_handler(list, music)
+    list1 = bot.send_message(message.chat.id, "input your music link")
+    bot.register_next_step_handler(list1, music)
     
 def music(message):
  try:
