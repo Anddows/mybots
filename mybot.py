@@ -1030,7 +1030,7 @@ def music(message):
         f.write(f'{text}\n\n')
     bot.send_message(message.chat.id, "Done! Saved")
     
-def musics2(message):
+def music2(message):
     text = message.text
     with open("musics.py", 'a') as f:
         f.write(f'{text} = ')
