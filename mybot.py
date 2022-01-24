@@ -1025,7 +1025,7 @@ def send_message(message):
 def music(message):
     text = message.text
     with open('musics.py', 'a') as f:
-        f.write(f'{text}\n\n')
+        f.write(f'"{text}\n\n"')
     bot.send_message(message.chat.id, "Done! Saved")
     
 
@@ -1043,7 +1043,7 @@ def musicname(message):
 def music2(message):
     text = message.text
     with open('musics.py', 'a') as f:
-        f.write(text = )
+        f.write(f'text = ')
     bot.send_message(message.chat.id, "Done! Saved, please write link")
     
 #    if message.text.lower() == "link":
