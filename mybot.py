@@ -1030,8 +1030,8 @@ def music(message):
     
 
 def musicname(message):
-    text = message.text
-    bot.send_message(message.chat.id, f"{musics.text}")
+    if message.text
+      bot.send_message(message.chat.id, musics.message.text)
     
     
 # def music(message):
