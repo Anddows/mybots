@@ -1004,6 +1004,20 @@ def send_message(message):
     rec = bot.send_message(message.chat.id, "send me text")
     bot.register_next_step_handler(rec, rec2)
     
+ elif message.text.lower() == "bot.musics.list":
+    list = bot.send_message(message.chat.id, "input your music link")
+    bot.register_next_step_handler(list, music)
+    
+def music(message):
+ try:
+    message = message.text
+    with open("musics.py", 'a') as f:
+        f.write(f'{message} = {message}\n\n')
+    bot.send_message(message.chat.id, "Done! Saved")
+    
+ except:
+    bot.send_message(message.chat.id, "Error")
+    
 def rec2(message):
  try: 
    if message.text:
