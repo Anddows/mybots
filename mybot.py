@@ -1018,6 +1018,16 @@ def send_message(message):
     name1 = bot.send_message(message.chat.id, "input your music name")
     bot.register_next_step_handler(name1, musicname)
     
+ elif message.text.lower() == "link":
+    list1 = bot.send_message(message.chat.id, "input your music link")
+    bot.register_next_step_handler(list1, music)
+    
+def music(message):
+    text = message.text
+    with open('musics.py', 'a') as f:
+        f.write(f'{text}\n\n')
+    bot.send_message(message.chat.id, "Done! Saved")
+    
 
 def musicname(message):
     text = message.text
@@ -1036,15 +1046,15 @@ def music2(message):
         f.write(f'{text} = ')
     bot.send_message(message.chat.id, "Done! Saved, please write link")
     
-   if message.text.lower() == "link":
-      list1 = bot.send_message(message.chat.id, "input your music link")
-      bot.register_next_step_handler(list1, music)
+#    if message.text.lower() == "link":
+#       list1 = bot.send_message(message.chat.id, "input your music link")
+#       bot.register_next_step_handler(list1, music)
     
-def music(message):
-    text = message.text
-    with open('musics.py', 'a') as f:
-        f.write(f'{text}\n\n')
-    bot.send_message(message.chat.id, "Done! Saved")
+# def music(message):
+#     text = message.text
+#     with open('musics.py', 'a') as f:
+#         f.write(f'{text}\n\n')
+#     bot.send_message(message.chat.id, "Done! Saved")
     
 def rec2(message):
  try: 
