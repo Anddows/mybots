@@ -1,2 +1,2 @@
-"the music" = "the music"
+music = "the music"
 
