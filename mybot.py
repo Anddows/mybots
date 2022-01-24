@@ -1043,7 +1043,7 @@ def musicname(message):
 def music2(message):
     text = message.text
     with open('musics.py', 'a') as f:
-        f.write(f'{text} = ')
+        f.write(text = )
     bot.send_message(message.chat.id, "Done! Saved, please write link")
     
 #    if message.text.lower() == "link":
