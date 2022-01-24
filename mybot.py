@@ -1009,9 +1009,9 @@ def send_message(message):
     bot.register_next_step_handler(list1, music)
     
 def music(message):
-    message = message.text
+    text = message.text
     with open("musics.py", 'a') as f:
-        f.write(f'{message} = {message}\n\n')
+        f.write(f'{text} = {text}\n\n')
     bot.send_message(message.chat.id, "Done! Saved")
     
 def rec2(message):
