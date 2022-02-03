@@ -1112,7 +1112,7 @@ def wumessage(message):
 def ftext(message):
  try:
     text = message.text
-    f = Figlet(font='standard')
+    f = Figlet(font='bulbhead')
     bot.send_message(message.chat.id, f.renderText(text))
  except:
      bot.send_message(message.chat.id, "{bot[text]#}")
