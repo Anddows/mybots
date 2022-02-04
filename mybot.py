@@ -58,9 +58,8 @@ def admin_message(message):
 
 
 
-@bot.message_handler(commands=['kdban'])
+@bot.message_handler(is_admin = True, commands=['kdban'])
 def kick2_users(message):
-      if message.from_user.id in adminsid.admins_id:
           if message.reply_to_message:
              text = message.reply_to_message.from_user.id
              bot.kick_chat_member(message.chat.id, text)
@@ -72,9 +71,8 @@ def kick2_users(message):
     # else:
     #     bot.send_message(message.chat.id, "do you not moder")
 
-@bot.message_handler(commands=['kdmute'])
-def mute_users(message):
-    if message.from_user.id in adminsid.admins_id:
+@bot.message_handler(is_admin = True, commands=['kdmute'])
+def mute_users(message): 
         if message.reply_to_message:
             text = message.reply_to_message.from_user.id
             bot.restrict_chat_member(message.chat.id, text)
@@ -89,9 +87,8 @@ def img_group(message):
             img = f.read()
         bot.send_photo(photo = img, chat_id = message.chat.id)
 
-@bot.message_handler(commands=['kdunmute'])
+@bot.message_handler(is_admin = True, commands=['kdunmute'])
 def unmute_users(message):
-    if message.from_user.id in adminsid.admins_id:
         if message.reply_to_message:
             text = message.reply_to_message.from_user.id
             bot.promote_chat_member(message.chat.id, text)
@@ -107,9 +104,8 @@ def unmute_users(message):
 #     bot.register_next_step_handler(msg, htmltest)
 
 
-@bot.message_handler(commands=['kdunban'])
+@bot.message_handler(is_admin = True, commands=['kdunban'])
 def unban_users(message):
-    if message.from_user.id in adminsid.admins_id:
         if message.reply_to_message:
             text = message.reply_to_message.from_user.id
             bot.unban_chat_member(message.chat.id, text)
