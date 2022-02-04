@@ -94,8 +94,8 @@ def unmute_users(message):
             bot.promote_chat_member(message.chat.id, text)
             bot.send_message(message.chat.id, "Done! user is unmuted")
 
-    else:
-        bot.send_message(message.chat.id, "do you not moder")
+        else:
+            bot.send_message(message.chat.id, "do you not moder")
 
 
 # @bot.message_handler(commands=['test'])
