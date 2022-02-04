@@ -65,8 +65,8 @@ def kick2_users(message):
              bot.kick_chat_member(message.chat.id, text)
              bot.send_message(message.chat.id, "Done!" .format(message, text))
 
-      else:
-          bot.send_message(message.chat.id, "do you not moder")
+          else:
+             bot.send_message(message.chat.id, "do you not moder")
 
     # else:
     #     bot.send_message(message.chat.id, "do you not moder")
