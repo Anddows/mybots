@@ -276,7 +276,7 @@ def send_message(message):
         bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id,can_delete_messages=True, can_pin_messages=True, can_restrict_members=True,  can_promote_members=True, can_change_info=True, can_invite_users = True)
         bot.send_message(message.chat.id, f'<b> {message.reply_to_message.from_user.first_name} </b> successfully you are admin', parse_mode='HTML')
         bot.delete_message(message.chat.id, message.message_id)
-        bot.set_chat_administrator_custom_title(message.chat.id, message.reply_to_message.from_user.id, "admin")
+        bot.set_chat_administrator_custom_title(message.chat.id, message.reply_to_message.from_user.id, "admin ")
 
 
 
