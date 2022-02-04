@@ -78,8 +78,8 @@ def mute_users(message):
             bot.restrict_chat_member(message.chat.id, text)
             bot.send_message(message.chat.id, "Done! user is muted")
 
-        else:
-            bot.send_message(message.chat.id, "do you not moder")
+    else:
+        bot.send_message(message.chat.id, "do you not moder")
 
 @bot.message_handler(commands=['image'])
 def img_group(message):
@@ -94,8 +94,8 @@ def unmute_users(message):
             bot.promote_chat_member(message.chat.id, text)
             bot.send_message(message.chat.id, "Done! user is unmuted")
 
-        else:
-            bot.send_message(message.chat.id, "do you not moder")
+    else:
+        bot.send_message(message.chat.id, "do you not moder")
 
 
 # @bot.message_handler(commands=['test'])
@@ -276,7 +276,7 @@ def send_message(message):
         bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id,can_delete_messages=True, can_pin_messages=True, can_restrict_members=True,  can_promote_members=True, can_change_info=True, can_invite_users = True)
         bot.send_message(message.chat.id, f'<b> {message.reply_to_message.from_user.first_name} </b> successfully you are admin', parse_mode='HTML')
         bot.delete_message(message.chat.id, message.message_id)
-        bot.set_chat_administrator_custom_title(message.chat.id, message.reply_to_message.from_user.id, "admin ")
+        bot.set_chat_administrator_custom_title(message.chat.id, message.reply_to_message.from_user.id, "admin")
 
 
 
