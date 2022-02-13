@@ -580,6 +580,7 @@ def send_message(message):
 #             bot.send_message(message.chat.id, "getting ban..., else try again" )
 
 
+
  elif message.text.lower() == "?kd ban":
      try:
       if message.from_user.id in adminsid.admins_id:
@@ -589,6 +590,23 @@ def send_message(message):
             bot.send_message(message.chat.id, "Done! User is banned" )
      except:
          bot.send_message(message.chat.id, "Siz adminga ban bera olmaysiz")
+            
+ 
+ elif message.text.lower() == "?kd vban":
+     try:
+        if message.reply_to_message:
+            text = bot.send_message(message.chat.id, "you can vote with reply")
+            bot.register_next_step_handler(text, ban2)
+     except:
+         bot.send_message(message.chat.id, "Siz adminga ban bera olmaysiz")
+            
+ elif message.text.lower() == "?kd vmute":
+     try:
+        if message.reply_to_message:
+            text = bot.send_message(message.chat.id, "you can vote with reply")
+            bot.register_next_step_handler(text, mute2)
+     except:
+         bot.send_message(message.chat.id, "Siz adminga mute bera olmaysiz")
 
  elif message.text.lower() == "?kd kick":
     if message.from_user.id in adminsid.admins_id:
@@ -1018,6 +1036,23 @@ def send_message(message):
  elif message.text.lower() == "link":
     list1 = bot.send_message(message.chat.id, "input your music link")
     bot.register_next_step_handler(list1, music)
+    
+def ban2(message):
+    if message.text.lower() == "+":
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 1")
+      bot.register_next_step_handler(text, vban1)
+     
+def vban1(message):
+    if message.text.lower() == "+":
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 2")
+      bot.register_next_step_handler(text, vban2)
+        
+def vban3(message):
+    if message.text.lower() == "+":
+      bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)
+    
+
+    
     
 def music(message):
     text = message.text
