@@ -34,7 +34,7 @@ button3.row("🔗 Web")
 def start_message(message):
     with open('groupsid.py', 'a') as f:
         f.write(f' {message.chat.id},')
-    bot.reply_to(message, "k1ngdw 1.9.3 beta test version")
+    bot.reply_to(message, "k1ngdw 1.9.4")
 
 @bot.message_handler(commands=['botstartadmin'])
 def admin_message(message):
@@ -114,7 +114,7 @@ def unban_users(message):
 @bot.message_handler(commands=['info'])
 def spam_users(message):
     if message.from_user.id in adminsid.admins_id:
-       spam_message = "DW\n\nName: k1ngdw\nUsername: @mynew885bot\nGroup: yes\nby @Code_Idea\nversion: 1.9.3 beta test version"
+       spam_message = "DW\n\nName: k1ngdw\nUsername: @mynew885bot\nGroup: yes\nby @Code_Idea\nversion: 1.9.4"
        bot.send_message(message.chat.id, spam_message)
 
 @bot.message_handler(commands=['news'])
@@ -789,13 +789,13 @@ def send_message(message):
      bot.send_message(message.chat.id, text)
 
  elif message.text.lower() == "dw news":
-     text = "k1ngdw Updated to 1.9.3 beta test version\n\nhttps://anddows.github.io/dwhelper.html"
+     text = "k1ngdw Updated to 1.9.4\n\nvote ban, vote mute, ?kd vban, ?kd vmute with reply\n\nhttps://anddows.github.io/dwhelper.html"
      bot.send_chat_action(message.chat.id, 'typing')
      time.sleep(3)
      bot.send_message(message.chat.id, text)
 
  elif message.text.lower() == "dw versions":
-     text = "k1ngdw 1.0\nk1ngdw 1.3\nk1ngdw 1.3 pro\nk1ngdw 1.4\nk1ngdw 1.5 beta\nk1ngdw 1.5.0 beta pro\nk1ngdw 1.6\nk1ngdw 1.7\nk1ngdw 1.8\nk1ngdw 1.9\nk1ngdw 1.9.1\nk1ngdw 1.9.2\nk1ngdw 1.10 beta\nk1ngdw 1.11 beta\nk1ngdw 1.9.3 beta test version"
+     text = "k1ngdw 1.0\nk1ngdw 1.3\nk1ngdw 1.3 pro\nk1ngdw 1.4\nk1ngdw 1.5 beta\nk1ngdw 1.5.0 beta pro\nk1ngdw 1.6\nk1ngdw 1.7\nk1ngdw 1.8\nk1ngdw 1.9\nk1ngdw 1.9.1\nk1ngdw 1.9.2\nk1ngdw 1.10 beta\nk1ngdw 1.11 beta\nk1ngdw 1.9.3 beta test version\nk1ngdw 1.9.4"
      bot.send_chat_action(message.chat.id, 'typing')
      time.sleep(3)
      bot.send_message(message.chat.id, text)
@@ -1038,44 +1038,46 @@ def send_message(message):
     bot.register_next_step_handler(list1, music)
     
 def ban2(message):
-    if message.text.lower() == "+":
-      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 1")
+    if message.text.lower().startswith("+"):
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + " voted 1")
       bot.register_next_step_handler(text, vban1)
      
 def vban1(message):
-    if message.text.lower() == "+":
-      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 2")
+    if message.text.lower().startswith("+"):
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + " voted 2")
       bot.register_next_step_handler(text, vban2)
         
 def vban3(message):
-    if message.text.lower() == "+":
+    if message.text.lower().startswith("+"):
       bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)
+      bot.send_message(messgae.chat.id, "Done! User is muted")
     
-def ban2(message):
-    if message.text.lower() == "+":
-      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 1")
-      bot.register_next_step_handler(text, vban1)
+# def ban2(message):
+#     if message.text.lower() == "+":
+#       text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + " voted 1")
+#       bot.register_next_step_handler(text, vban1)
      
-def vban1(message):
-    if message.text.lower() == "+":
-      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 2")
-      bot.register_next_step_handler(text, vban2)
+# def vban1(message):
+#     if message.text.lower() == "+":
+#       text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + " voted 2")
+#       bot.register_next_step_handler(text, vban2)
         
 
         
 def mute2(message):
-    if message.text.lower() == "+":
-      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 1")
+    if message.text.lower().startswith("+"):
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + " voted 1")
       bot.register_next_step_handler(text, vmute1)
      
-def vban1(message):
-    if message.text.lower() == "+":
-      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 2")
+def vmute1(message):
+    if message.text.lower().startswith("+"):
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + " voted 2")
       bot.register_next_step_handler(text, vmute2)
         
-def vban3(message):
-    if message.text.lower() == "+":
-      bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)
+def vmute3(message):
+    if message.text.lower().startswith("+"):
+      bot.restric_chat_member(message.chat.id, message.reply_to_message.from_user.id)
+      bot.send_message(messgae.chat.id, "Done! User is muted")
     
     
 # def music(message):
