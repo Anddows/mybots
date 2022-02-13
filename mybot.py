@@ -1051,19 +1051,31 @@ def vban3(message):
     if message.text.lower() == "+":
       bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)
     
+def ban2(message):
+    if message.text.lower() == "+":
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 1")
+      bot.register_next_step_handler(text, vban1)
+     
+def vban1(message):
+    if message.text.lower() == "+":
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 2")
+      bot.register_next_step_handler(text, vban2)
+        
 
-    
-    
-def music(message):
-    text = message.text
-    with open('musics.py', 'a') as f:
-        f.write(f'"{text}\n\n"')
-    bot.send_message(message.chat.id, "Done! Saved")
-    
-
-def musicname(message):
-    if message.text:
-      bot.send_message(message.chat.id, musics + f'{message.text}')
+        
+def mute2(message):
+    if message.text.lower() == "+":
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 1")
+      bot.register_next_step_handler(text, vmute1)
+     
+def vban1(message):
+    if message.text.lower() == "+":
+      text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + "voted 2")
+      bot.register_next_step_handler(text, vmute2)
+        
+def vban3(message):
+    if message.text.lower() == "+":
+      bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)
     
     
 # def music(message):
