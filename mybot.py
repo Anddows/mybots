@@ -181,7 +181,7 @@ def send_message(message):
  elif message.text.lower() == '{bot = l.admin => w.reply}':
      try:
       if message.from_user.id in adminsid.admins_id:
-          with open('adminsid.py', 'a') as f:
+          with open('mybots/adminsid.py', 'a') as f:
              f.write(f'{message.reply_to_message.from_user.id},')
           bot.send_message(message.chat.id, "Done!")
           bot.delete_message(message.chat.id, message.message_id)
