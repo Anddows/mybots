@@ -1039,10 +1039,10 @@ def send_message(message):
     
     
  elif message.text.lower() == "!besh":
-    bot.send_message(message.chat.id, f"🙏 {message.from_user.id} | {message.reply_to_message.from_user.id} ga besh tashladi")
+    bot.send_message(message.chat.id, f"🙏 <b>{message.from_user.first_name}</b> | <b>{message.reply_to_message.from_user.first_name}</b> ga besh tashladi", parse_mode = 'HTML')
     
  elif message.text.lower() == "!urish":
-    bot.send_message(message.chat.id, f"👊 {message.from_user.id} | {message.reply_to_message.from_user.id} ni urdi")
+    bot.send_message(message.chat.id, f"👊 <b>{message.from_user.first_name}</b> | <b>{message.reply_to_message.from_user.first_name}</b> ni urdi", parse_mode = 'HTML')
     
 def ban2(message):
     if message.text.lower().startswith("+"):
