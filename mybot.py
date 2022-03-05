@@ -400,53 +400,53 @@ def send_message(message):
    except:
          bot.send_message(message.chat.id, "Xatolik yuz berdi")
 
- elif message.text.lower().startswith('https'):
-     bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan'.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
-     bot.restrict_chat_member(message.chat.id, message.from_user.id, message.date + 60)
-
- elif message.text.lower().startswith('http'):
-     bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan '.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
-     bot.restrict_chat_member(message.chat.id, message.from_user.id, message.date + 60)
-
-#  elif message.text.lower().startswith('@'):
-#      bot.send_message(message.chat.id, '@{} Пожалуйста, не размещайте рекламу '.format(message.from_user.username))
+#  elif message.text.lower().startswith('https'):
+#      bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan'.format(message.from_user.username))
 #      bot.delete_message(message.chat.id, message.message_id)
+#      bot.restrict_chat_member(message.chat.id, message.from_user.id, message.date + 60)
 
- elif message.text.lower().startswith('t.me/'):
-     bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan'.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
-     bot.restrict_chat_member(message.chat.id, message.from_user.id, message.date + 60)
+#  elif message.text.lower().startswith('http'):
+#      bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan '.format(message.from_user.username))
+#      bot.delete_message(message.chat.id, message.message_id)
+#      bot.restrict_chat_member(message.chat.id, message.from_user.id, message.date + 60)
 
- elif message.text.lower().startswith('telegram/me'):
-     bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan '.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
-     bot.restrict_chat_member(message.from_user.id, message.from_user.id, message.date + 60)
+# #  elif message.text.lower().startswith('@'):
+# #      bot.send_message(message.chat.id, '@{} Пожалуйста, не размещайте рекламу '.format(message.from_user.username))
+# #      bot.delete_message(message.chat.id, message.message_id)
 
- elif message.text.lower().startswith('сук'):
-     bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
+#  elif message.text.lower().startswith('t.me/'):
+#      bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan'.format(message.from_user.username))
+#      bot.delete_message(message.chat.id, message.message_id)
+#      bot.restrict_chat_member(message.chat.id, message.from_user.id, message.date + 60)
 
- elif message.text.lower().startswith('cучка'):
-     bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
+#  elif message.text.lower().startswith('telegram/me'):
+#      bot.send_message(message.chat.id, '@{} Reklama yuborish Taqiqlangan '.format(message.from_user.username))
+#      bot.delete_message(message.chat.id, message.message_id)
+#      bot.restrict_chat_member(message.from_user.id, message.from_user.id, message.date + 60)
 
-#  elif message.text.lower().startswith('бл'):
+#  elif message.text.lower().startswith('сук'):
 #      bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
 #      bot.delete_message(message.chat.id, message.message_id)
 
- elif message.text.lower().startswith('нах'):
-     bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
+#  elif message.text.lower().startswith('cучка'):
+#      bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
+#      bot.delete_message(message.chat.id, message.message_id)
 
- elif message.text.lower().startswith('иди н'):
-     bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
+# #  elif message.text.lower().startswith('бл'):
+# #      bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
+# #      bot.delete_message(message.chat.id, message.message_id)
 
- elif message.text.lower().startswith('мат'):
-     bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
-     bot.delete_message(message.chat.id, message.message_id)
+#  elif message.text.lower().startswith('нах'):
+#      bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
+#      bot.delete_message(message.chat.id, message.message_id)
+
+#  elif message.text.lower().startswith('иди н'):
+#      bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
+#      bot.delete_message(message.chat.id, message.message_id)
+
+#  elif message.text.lower().startswith('мат'):
+#      bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
+#      bot.delete_message(message.chat.id, message.message_id)
 
 #  elif message.text.lower().startswith('Ма'):
 #      bot.send_message(message.chat.id, '@{} пожалуйста, говорите хорошо  '.format(message.from_user.username))
