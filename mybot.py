@@ -1039,9 +1039,11 @@ def send_message(message):
     
     
  elif message.text.lower() == "!besh":
+    bot.delete_message(message.chat.id, message.message_id)
     bot.send_message(message.chat.id, f"🙏 <b>{message.from_user.first_name}</b> | <b>{message.reply_to_message.from_user.first_name}</b> ga besh tashladi", parse_mode = 'HTML')
     
  elif message.text.lower() == "!urish":
+    bot.delete_message(message.chat.id, message.message_id)
     bot.send_message(message.chat.id, f"👊 <b>{message.from_user.first_name}</b> | <b>{message.reply_to_message.from_user.first_name}</b> ni urdi", parse_mode = 'HTML')
     
 def ban2(message):
