@@ -1037,6 +1037,13 @@ def send_message(message):
     list1 = bot.send_message(message.chat.id, "input your music link")
     bot.register_next_step_handler(list1, music)
     
+    
+ elif message.text.lower() == "!besh":
+    bot.send_message(message.chat.id, f"🙏 {message.from_user.id} | {message.reply_to_message.from_user.id} ga besh tashladi")
+    
+ elif message.text.lower() == "!urish":
+    bot.send_message(message.chat.id, f"👊 {message.from_user.id} | {message.reply_to_message.from_user.id} ni urdi")
+    
 def ban2(message):
     if message.text.lower().startswith("+"):
       text = bot.send_message(message.chat.id, message.reply_to_message.from_user.first_name + " voted 1")
