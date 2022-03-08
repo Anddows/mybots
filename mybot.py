@@ -1050,6 +1050,10 @@ def send_message(message):
      bot.send_message(message.chat.id, soup.get_text())
    except:
         print("Error")
+        
+ elif message.text.lower() == "{get = [site]text}":
+    text = bot.send_message(message.chat.id, "your link")
+    bot.register.next_step_handler(text, web1)
     
  elif message.text.lower() == "link":
     list1 = bot.send_message(message.chat.id, "input your music link")
@@ -1078,6 +1082,19 @@ def vban3(message):
     if message.text.lower().startswith("+"):
       bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)
       bot.send_message(messgae.chat.id, "Done! User is muted")
+        
+def web1(message):
+    text = message.text
+    
+    browser = ms.Browser()
+    
+    url = f'{text}'
+    
+    page = browser.get(url)
+
+    soup = page.soup
+
+     bot.send_message(message.chat.id, soup.get_text())
     
 # def ban2(message):
 #     if message.text.lower() == "+":
