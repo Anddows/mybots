@@ -1051,9 +1051,9 @@ def send_message(message):
    except:
         print("Error")
         
- elif message.text.lower() == "{get = [site]text}":
+ elif message.text.lower() == "{get = web => text}":
     text = bot.send_message(message.chat.id, "your link")
-    bot.register.next_step_handler(text, web1)
+    bot.register_next_step_handler(text, web1)
     
  elif message.text.lower() == "link":
     list1 = bot.send_message(message.chat.id, "input your music link")
