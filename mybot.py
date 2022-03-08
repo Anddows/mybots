@@ -123,9 +123,7 @@ def my_message(message):
 
 @bot.message_handler(content_types=['new_chat_members'])
 def new_member_text(message):
-        bot.reply_to(message, f'Salom <a href="https://t.me/{message.from_user.username}"><b>{message.from_user.first_name}</b></a> Guruhimizga hush kelibsiz.\n\nHurmatingizni bilib yozing.', parse_mode = 'HTML', disable_web_page_preview=False
-#         bot.kick_chat_member(message.chat.id, message.from_user.id)
-#         bot.reply_to(message.chat.id, "@{} Guruh qattiq himoyalangan".format(message.from_user.username))
+        bot.reply_to(message, f'Salom <a href="https://t.me/{message.from_user.username}"><b>{message.from_user.first_name}</b></a> Guruhimizga hush kelibsiz.\n\nHurmatingizni bilib yozing.', parse_mode = 'HTML', disable_web_page_preview=False)
         bot.delete_message(message.chat.id, message.message_id)
 
 @bot.message_handler(content_types=['left_chat_member'])
