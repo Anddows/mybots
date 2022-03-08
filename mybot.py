@@ -123,14 +123,14 @@ def my_message(message):
 
 @bot.message_handler(content_types=['new_chat_members'])
 def new_member_text(message):
-        bot.reply_to(message, "Salom @{} Guruhimizga hush kelibsiz.\n\nHurmatingizni bilib yozing." .format(message.from_user.username))
+        bot.reply_to(message, f"Salom <a href="https://t.me/{message.from_user.username}"></a> Guruhimizga hush kelibsiz.\n\nHurmatingizni bilib yozing.", parse_mode = 'HTML')
         bot.kick_chat_member(message.chat.id, message.from_user.id)
         bot.reply_to(message.chat.id, "@{} Guruh qattiq himoyalangan".format(message.from_user.username))
         bot.delete_message(message.chat.id, message.message_id)
 
 @bot.message_handler(content_types=['left_chat_member'])
 def left_member_text(message):
-     bot.reply_to(message, "@{} Guruhni tark etdi" .format(message.from_user.username))
+     bot.reply_to(message, f"<a href="https://t.me/{message.from_user.username}"></a> Guruhni tark etdi" .format(message.from_user.username))
      bot.delete_message(message.chat.id, message.message_id)
 
 # @bot.message_handler(content_types=['text'])
