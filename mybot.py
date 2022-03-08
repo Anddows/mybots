@@ -16,6 +16,13 @@ downl = json.load
 bot = telebot.TeleBot('1526588208:AAFWFWAOdl_Lw31phdlrtCAplw2PXSGUqbY')
 API = "https://core.telegram.org/bots/api/{}"
 
+browser = ms.Browser() 
+url = "https://anddows.github.io/dwnews.html"
+
+page = browser.get(url)
+
+soup = page.soup
+
 button = telebot.types.ReplyKeyboardMarkup(True)
 button2 = telebot.types.ReplyKeyboardMarkup(True)
 button3 = telebot.types.ReplyKeyboardMarkup(True)
@@ -1034,11 +1041,11 @@ def send_message(message):
     
  elif message.text.lower() == "?commands":
    try:
-     url = "https://anddows.github.io/dwnews.html"
+#      url = "https://anddows.github.io/dwnews.html"
 
-     page = browser.get(url)
+#      page = browser.get(url)
     
-     soup = page.soup
+#      soup = page.soup
 
      bot.send_message(message.chat.id, soup.get_text())
    except:
