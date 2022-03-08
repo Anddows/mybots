@@ -130,7 +130,7 @@ def new_member_text(message):
 
 @bot.message_handler(content_types=['left_chat_member'])
 def left_member_text(message):
-     bot.reply_to(message, f"<a href="https://t.me/{message.from_user.username}"></a> Guruhni tark etdi" .format(message.from_user.username))
+     bot.reply_to(message, f"<a href="https://t.me/{message.from_user.username}"></a> Guruhni tark etdi", parse_mode = 'HTML')
      bot.delete_message(message.chat.id, message.message_id)
 
 # @bot.message_handler(content_types=['text'])
