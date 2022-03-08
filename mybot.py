@@ -1094,7 +1094,7 @@ def web1(message):
 
     soup = page.soup
 
-     bot.send_message(message.chat.id, soup.get_text())
+    bot.send_message(message.chat.id, soup.get_text())
     
 # def ban2(message):
 #     if message.text.lower() == "+":
