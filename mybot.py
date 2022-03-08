@@ -5,6 +5,7 @@ import adminsid
 import speech_recognition as sr
 from gtts import gTTS
 from pyfiglet import Figlet
+import mechanicalsoup as ms
 import qrcode
 import json
 import calendar
@@ -1030,6 +1031,18 @@ def send_message(message):
  elif message.text.lower() == "bot = my.musics.list":
     name1 = bot.send_message(message.chat.id, "input your music name")
     bot.register_next_step_handler(name1, musicname)
+    
+ elif message.text.lower() == "?commands":
+   try:
+     url = "https://anddows.github.io/dwnews.html"
+
+     page = browser.get(url)
+    
+     soup = page.soup
+
+     bot.send_message(message.chat.id, soup.get_text())
+   except:
+        print("Error")
     
  elif message.text.lower() == "link":
     list1 = bot.send_message(message.chat.id, "input your music link")
