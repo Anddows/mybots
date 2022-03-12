@@ -1354,11 +1354,6 @@ def qrinsta(message):
 #      bot.send_message(message.chat.id, "info mute, ban, uz/rus:\n\nkd ban, бан - ban berish\nkd mute, мут - mute berish\nkd mute 01, мут 01 - 1 min mute berish\nkd unban, разбан - bandan olish\nkd unmute, размут - mutedan olish")
 
         print(message)
-#  else:
-
-#       if message.from_user.id == 1765604781:
-#         bot.send_message(-1001593564297, message.text)
-#             # bot.send_message(1765860471, message.text .format(message.from_user.first_name))
 
 
 bot.polling(none_stop = True)
