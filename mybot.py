@@ -1341,7 +1341,7 @@ def qrinsta(message):
 # elif message.text.lower() == "info h5 dw bot":
 #      bot.send_message(message.chat.id, "info mute, ban, uz/rus:\n\nkd ban, бан - ban berish\nkd mute, мут - mute berish\nkd mute 01, мут 01 - 1 min mute berish\nkd unban, разбан - bandan olish\nkd unmute, размут - mutedan olish")
 
-        print(message)
+     print(message)
 
 
 bot.polling(none_stop = True)
