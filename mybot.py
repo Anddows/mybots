@@ -1302,7 +1302,7 @@ def qrweb(message):
       img = qrcode.make('https://'+ text)
       img.save('qrkodd.png')
     
-      bot.send_photo(message.chat.id, photo = open('qrkodd.png', 'rb'))
+      bot.send_photo(message.from_user.id, photo = open('qrkodd.png', 'rb'))
 
     except:
      print("kichik xatolik")
@@ -1315,7 +1315,7 @@ def qrtg(message):
       img.save('qrkodd.png')
 
 
-      bot.send_photo(message.chat.id, photo = open('qrkodd.png', 'rb'))
+      bot.send_photo(message.from_user.id, photo = open('qrkodd.png', 'rb'))
 
     except:
      print("kichik xatolik")
@@ -1326,7 +1326,7 @@ def qrinsta(message):
       img = qrcode.make('instagram.com/'+ text)
       img.save('qrkodd.png')
 
-      bot.send_photo(message.chat.id, photo = open('qrkodd.png', 'rb'))
+      bot.send_photo(message.from_user.id, photo = open('qrkodd.png', 'rb'))
 
     except:
      print("kichik xatolik")
