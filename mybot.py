@@ -1278,10 +1278,9 @@ def test(message):
 def newdesc(message):
     desc = message.text
     bot.set_chat_description(message.chat.id, f"{desc}")
-    text = "Done!"
-    bot.pin_chat_message(message.chat.id, text)
-    bot.unpin_chat_message(message.chat.id, text)
     bot.send_message(message.chat.id,'Done!')
+    bot.pin_chat_message(message.chat.id, +1)
+    bot.unpin_chat_message(message.chat.id, +1)
 
 def newadmin(message):
  try:
