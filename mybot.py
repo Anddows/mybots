@@ -893,16 +893,10 @@ def send_message(message):
 
  elif message.text.lower() == "new name":
        mesg = bot.send_message(message.chat.id,'Please send me your new title')
-       text = "Done!"
-       bot.pin_chat_message(message.chat.id, text) 
-       bot.unpin_chat_message(message.chat.id, text) 
        bot.register_next_step_handler(mesg,test)
 
  elif message.text.lower() == "new desc":
        mesg = bot.send_message(message.chat.id,'Please send me your new text for description')
-       text = "Done!"
-       bot.pin_chat_message(message.chat.id, text)
-       bot.unpin_chat_message(message.chat.id, text) 
        bot.register_next_step_handler(mesg,newdesc)
 
  elif message.text.lower() == "new admin name":
@@ -1284,6 +1278,9 @@ def test(message):
 def newdesc(message):
     desc = message.text
     bot.set_chat_description(message.chat.id, f"{desc}")
+    text = "Done!"
+    bot.pin_chat_message(message.chat.id, text)
+    bot.unpin_chat_message(message.chat.id, text)
     bot.send_message(message.chat.id,'Done!')
 
 def newadmin(message):
