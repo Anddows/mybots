@@ -207,8 +207,6 @@ def send_message(message):
  elif message.text.lower() == "i2":
     if message.from_user.id in adminsid.admins_id:
         bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id, can_delete_messages = True, can_pin_messages = True)
-        bot.set_chat_administrator_custom_title(message.chat.id, message.reply_to_message.from_user.id, "i2")
-        bot.send_message(message.chat.id, f'<b> {message.reply_to_message.from_user.first_name} </b> siz faqat habarlarni o\'chira olasiz va pin qila olasiz i2', parse_mode = 'HTML')
         bot.delete_message(message.chat.id, message.message_id)
  elif message.text.lower() == "i1":
   try:
@@ -240,7 +238,7 @@ def send_message(message):
  elif message.text.lower() == "i5":
   try:
     if message.from_user.id in adminsid.admins_id:
-        bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id, can_delete_messages=True,
+        bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id, can_post_messages = None)
                                 can_pin_messages=True, can_restrict_members=True, can_manage_chat=True, can_manage_voice_chats = True)
         bot.send_message(message.chat.id,
                          f'<b> {message.reply_to_message.from_user.first_name} </b> siz faqat habarlarni o\'chira olasiz va pin qila olasiz, foydalanuvchilarni mute, chatni, oavozli chatlarni boshqara olasiz',
