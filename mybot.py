@@ -208,12 +208,11 @@ def send_message(message):
     if message.from_user.id in adminsid.admins_id:
         bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id, can_delete_messages = True, can_pin_messages = True)
         bot.delete_message(message.chat.id, message.message_id)
- elif message.text.lower() == "i1":
+ elif message.text.lower() == "?kd dis polls":
   try:
     if message.from_user.id in adminsid.admins_id:
-        bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id, can_delete_messages = True)
-        bot.set_chat_administrator_custom_title(message.chat.id, message.reply_to_message.from_user.id, "i1")
-        bot.send_message(message.chat.id,f'<b> {message.reply_to_message.from_user.first_name} </b> siz faqat habarlarni o\'chira olasiz i1', parse_mode='HTML')
+        bot.restric_chat_member(message.chat.id, message.reply_to_message.from_user.id, can_send_posts = None)
+        bot.send_message(message.chat.id,f'<b> {message.reply_to_message.from_user.first_name} </b> You can not send polls', parse_mode='HTML')
         bot.delete_message(message.chat.id, message.message_id)
   except:
       bot.send_message(message.chat.id, "Error")
