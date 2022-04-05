@@ -184,6 +184,10 @@ def send_message(message):
  elif message.text.lower() == "?kd l.user.photo":
       bot.get_user_profile_photos(message.chat.id, message.reply_to_message.from_user.id)
       bot.delete_message(message.chat.id, message.message_id)
+    
+elif message.text.lower() == "?kd l.user.photo":
+      bot.get_user_profile_photos(message.chat.id, message.reply_to_message.from_user.id)
+      bot.delete_message(message.chat.id, message.message_id)
 
  elif message.text.lower() == "help":
        bot.send_message(message.chat.id, "Help\n\nupdating...")
@@ -203,7 +207,8 @@ def send_message(message):
       if message.from_user.id in adminsid.admins_id:
           with open('adminsid.py', 'a') as f:
              f.write(f'{message.reply_to_message.from_user.id},')
-          bot.send_message(message.chat.id, "Done!")
+             read = f.read()
+          bot.send_message(message.chat.id, f"Done! admins id = {read}", )
           bot.delete_message(message.chat.id, message.message_id)
      except:
           bot.send_message(message.chat.id, "Commands error:" + " <em>'{bot = [i.r?]}</em>'", parse_mode = 'HTML')
